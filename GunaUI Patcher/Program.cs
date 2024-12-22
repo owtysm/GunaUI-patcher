@@ -18,7 +18,7 @@ namespace GunaUI_Patcher
         static void Main(string[] args)
         {
 
-            string folderLoc = Directory.GetCurrentDirectory() + $"\\Cracked\\";
+            string folderLoc = Directory.GetCurrentDirectory() + $"\\Patched\\";
             string fileLoc = $"{folderLoc}{guna}.dll";
 
             while (!File.Exists(guna + ".dll"))
@@ -107,14 +107,15 @@ namespace GunaUI_Patcher
 
                 Console.WriteLine($"Patch finished!");
 
-                Console.WriteLine($"\nShould be cracked, cleaning up code..");
+                Console.WriteLine($"\nShould be patched, cleaning up code..");
                 ilProcessor.Body.SimplifyMacros();
 
                 Console.WriteLine("Writing to .dll file..");
 
                 Directory.CreateDirectory(folderLoc);
                 assembly.Write(fileLoc);
-                Console.WriteLine($"\nSUCCESS! - \"{fileLoc}\" (took {sw.ElapsedMilliseconds}ms)");
+                Console.WriteLine($"\nSuccessfully removed the license in {sw.ElapsedMilliseconds}ms!");
+                Console.WriteLine($"\"{fileLoc}\"");
                 Console.WriteLine("(We also opened the folder in file explorer.)");
 
                 Process.Start(new ProcessStartInfo
@@ -128,7 +129,6 @@ namespace GunaUI_Patcher
             {
                 Console.WriteLine("\nPatch failed!");
                 Console.WriteLine($"There might've been an update that broke the patcher!\n\nLatest tested version: {latestTestedVersion}");
-
             }
 
             Console.ReadKey();
