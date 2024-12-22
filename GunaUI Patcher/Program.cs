@@ -17,7 +17,6 @@ namespace GunaUI_Patcher
         [STAThread]
         static void Main(string[] args)
         {
-
             string folderLoc = Directory.GetCurrentDirectory() + $"\\Patched\\";
             string fileLoc = $"{folderLoc}{guna}.dll";
 
