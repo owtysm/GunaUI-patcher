@@ -114,6 +114,8 @@ namespace GunaUI_Patcher
 
                 Directory.CreateDirectory(folderLoc);
                 assembly.Write(fileLoc);
+                assembly.Dispose();
+
                 Console.WriteLine($"\nSuccessfully removed the license in {sw.ElapsedMilliseconds}ms!");
                 Console.WriteLine($"\"{fileLoc}\"");
                 Console.WriteLine("(We also opened the folder in file explorer.)");
