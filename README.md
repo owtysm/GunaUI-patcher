@@ -1,4 +1,4 @@
-tested for 2.0.4.6
+> i'm not providing any release binary, nor the already cracked guna.ui2.winforms dll.
 
 a 'patcher' for https://www.nuget.org/packages/Guna.UI2.WinForms
-![image](https://github.com/user-attachments/assets/bf9baf05-92e2-4a1a-83fb-87c85236eb2d)
+![image](https://github.com/user-attachments/assets/ec3c921b-4e23-457d-9e82-c3e78b308205)
