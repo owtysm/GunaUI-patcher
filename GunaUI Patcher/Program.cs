@@ -12,11 +12,15 @@ namespace GunaUI_Patcher
     internal class Program
     {
         public const string guna = "Guna.UI2";
-        public const string latestTestedVersion = "2.0.4.6";
+        public const string latestTestedVersion = "2.0.4.7";
 
         [STAThread]
         static void Main(string[] args)
         {
+            Console.WriteLine($"Latest tested version: {latestTestedVersion}");
+            Console.WriteLine($"Find updates at https://github.com/1Kxhu/GunaUI-patcher");
+            Console.WriteLine();
+
             string folderLoc = Directory.GetCurrentDirectory() + $"\\Patched\\";
             string fileLoc = $"{folderLoc}{guna}.dll";
 
@@ -87,13 +91,13 @@ namespace GunaUI_Patcher
                         continue;
                     }
 
-                    Console.WriteLine($"modifying methods in: {parentClass.Name}");
+                    Console.WriteLine($"   finding target methods..");
 
                     foreach (var method in parentClassDef.Methods)
                     {
                         if (method.HasBody)
                         {
-                            Console.WriteLine($" replacing method: {method.Name}");
+                            Console.WriteLine($"     replacing method: {method.Name}");
                             var newBody = new MethodBody(method)
                             {
                                 Instructions = { Instruction.Create(OpCodes.Ret) }
