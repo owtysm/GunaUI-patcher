@@ -18,7 +18,7 @@ namespace GunaUI_Patcher
         static void Main(string[] args)
         {
             Console.WriteLine($"Latest tested version: {latestTestedVersion}");
-            Console.WriteLine($"Find updates at https://github.com/7owh/GunaUI-patcher");
+            Console.WriteLine($"Find updates at https://github.com/owtysm/GunaUI-patcher");
             Console.WriteLine();
 
             string folderLoc = Directory.GetCurrentDirectory() + $"\\Patched\\";
